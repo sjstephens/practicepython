@@ -6,12 +6,12 @@ Note: for this exercise, the expectation is that you explicitly write out the ye
 (and therefore be out of date the next year).
 '''
 
-# importing datetime module for now()  
+# importing datetime module for today()  
 from datetime import date
       
 
 def calcFuture100(age):
-    # using now() to get current time  
+    # Use date function to return year caller turns 100
     today = date.today()
     this_year = today.year
     birth_year = this_year - age
