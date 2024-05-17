@@ -10,12 +10,13 @@ if __name__ == "__main__":
     # Use of Sets
     #a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
     #b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-    a = set(random.sample(range(1,30), 12))
-    b = set(random.sample(range(1,30), 16))
+    
     #unique_list = set(a + b)
     #print(f"this is a unique set of the two lists {sorted(unique_list)}")
     print(a)
     print(b)
+    a = set(random.sample(range(1,30), 12))
+    b = set(random.sample(range(1,30), 16))
     print(f"this is a unique set of the two lists {sorted(a.intersection(b))}")
        
  

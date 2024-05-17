@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
 '''
-Given a list saved in a variable: 
-a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]. 
-Write one line of Python that takes this list a and makes a new 
-list that has only the even elements of this list in it.
-
-if __name__ == "__main__":
-    a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-    evens = ([b for b in a if b % 2 == 0])
-    print(evens)
-
 Make a two-player Rock-Paper-Scissors game. 
 (Hint: Ask for player plays (using input), compare them, 
 print out a message of congratulations to the winner, 
@@ -21,4 +11,34 @@ Rock beats scissors
 Scissors beats paper
 Paper beats rock
 '''
- 
+import random
+
+def getchoice(prompt = "Enter a number: "):
+    return input(prompt)
+
+def pickwinner(hand1, hand2):
+    if hand1 == hand2:
+        winner = "a tie!"
+    elif hand1 == "rock" and hand2 == "scissors":
+        winner = "you!"
+    elif hand1 == "scissors" and hand2 == "paper":
+        winner = "you!"
+    elif hand1 == "Paper" and hand2 == "rock":
+        winner = "you!"
+    else:
+        winner = "me!"
+    return winner
+
+if __name__ == "__main__":
+    print ("Welcome to the game of ROCK/PAPER/SCISSORS!")
+    choices = ["rock", "paper", "scissors"]
+    yourpick = ""
+    while yourpick != "q":
+        yourpick = getchoice("Please enter your choice (rock, paper, scissors), q to quit: ")
+        if (yourpick == "q") or (yourpick not in choices):
+            continue
+        mypick = random.choice(choices)
+        print(f"I pick {mypick}")
+        print(f"The winner is {pickwinner(yourpick, mypick)}")
+        yourpick = None  
+
