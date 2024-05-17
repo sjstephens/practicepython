@@ -1,0 +1,8 @@
+# Compiled files
+bin/
+*.class
+*.jar
+*.txt
+*.csv
+*.log
+*.tmp
