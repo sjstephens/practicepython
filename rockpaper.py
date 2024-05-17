@@ -13,32 +13,29 @@ Paper beats rock
 '''
 import random
 
-def getchoice(prompt = "Enter a number: "):
-    return input(prompt)
+ROCK = "rock"
+PAPER = "paper"
+SCISSORS = "scissors"
+CHOICES = [ ROCK, PAPER, SCISSORS ]
+BEATENBY = { ROCK: PAPER, PAPER: SCISSORS, SCISSORS: ROCK }
 
-def pickwinner(hand1, hand2):
-    if hand1 == hand2:
-        winner = "a tie!"
-    elif hand1 == "rock" and hand2 == "scissors":
-        winner = "you!"
-    elif hand1 == "scissors" and hand2 == "paper":
-        winner = "you!"
-    elif hand1 == "Paper" and hand2 == "rock":
-        winner = "you!"
+def pickwinner(yourhand, myhand):
+    if yourhand == myhand:
+        return "a tie"
+    elif BEATENBY[myhand] == yourhand:
+        return "you"
     else:
-        winner = "me!"
-    return winner
+        return "me"
 
 if __name__ == "__main__":
     print ("Welcome to the game of ROCK/PAPER/SCISSORS!")
-    choices = ["rock", "paper", "scissors"]
     yourpick = ""
-    while yourpick != "q":
-        yourpick = getchoice("Please enter your choice (rock, paper, scissors), q to quit: ")
-        if (yourpick == "q") or (yourpick not in choices):
+    while yourpick != "Q":
+        yourpick = input(f"Please enter your choice {", ".join(CHOICES)}, or Q to Quit: ").upper()
+        if (yourpick == "Q") or (yourpick not in CHOICES):
             continue
-        mypick = random.choice(choices)
+        mypick = random.choice(CHOICES)
         print(f"I pick {mypick}")
         print(f"The winner is {pickwinner(yourpick, mypick)}")
-        yourpick = None  
+        yourpick = ""  
 
