@@ -31,8 +31,8 @@ if __name__ == "__main__":
     print ("Welcome to the game of ROCK/PAPER/SCISSORS!")
     yourpick = ""
     while yourpick != "Q":
-        yourpick = input(f"Please enter your choice {", ".join(CHOICES)}, or Q to Quit: ").upper()
-        if (yourpick == "Q") or (yourpick not in CHOICES):
+        yourpick = input(f"Please enter your choice {", ".join(CHOICES)}, or Q to Quit: ").lower()
+        if (yourpick == "q") or (yourpick not in CHOICES):
             continue
         mypick = random.choice(CHOICES)
         print(f"I pick {mypick}")
