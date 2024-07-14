@@ -40,7 +40,7 @@ def findMedian(data):
 
 # to call script directly
 if __name__ == "__main__":
-    # Accept odd number of integers and find the median
+    # Accept integers and find the median
     valid_input = True
     while valid_input is True:
         err_msg = ""
